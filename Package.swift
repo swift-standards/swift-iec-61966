@@ -43,6 +43,12 @@ let package = Package(
         ),
 
         // MARK: - Tests
+        .testTarget(
+            name: "IEC 61966 Tests",
+            dependencies: [
+                "IEC 61966",
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
@@ -53,6 +59,7 @@ for target in package.targets where ![.system, .binary, .plugin, .macro].contain
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
         .enableExperimentalFeature("Lifetimes"),
         .enableExperimentalFeature("SuppressedAssociatedTypes"),
         .enableExperimentalFeature("SuppressedAssociatedTypesWithDefaults"),
